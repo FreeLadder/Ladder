@@ -53,6 +53,7 @@ class NetworkUtil: NSObject {
         request.allowsCellularAccess = true
         let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
         let task = session.dataTask(with: request)
+        data = Data()
         task.resume()
         session.finishTasksAndInvalidate()
     }

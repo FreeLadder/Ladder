@@ -19,12 +19,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         configRefreshControl()
         configTableView()
-        loadData()
+        loadData(animated: false)
     }
     
     
-    func loadData() {
-        refreshControl.beginRefreshing()
+    func loadData(animated: Bool = true) {
+        if animated { refreshControl.beginRefreshing() }
         Creater.shared.makeLadder { [weak self] (ladders, error) in
             DispatchQueue.main.async {
                 if error != nil || ladders.isEmpty {
