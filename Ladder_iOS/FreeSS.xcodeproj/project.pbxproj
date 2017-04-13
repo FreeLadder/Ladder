@@ -26,7 +26,6 @@
 		4DD2ABCC1E92093600F286DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DD2ABCA1E92093600F286DC /* LaunchScreen.storyboard */; };
 		4DD2ABD41E920A4200F286DC /* Ladder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD2ABD31E920A4200F286DC /* Ladder.swift */; };
 		4DD2ABD81E921E6600F286DC /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD2ABD71E921E6600F286DC /* Util.swift */; };
-		4DD2ABDC1E92769800F286DC /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD2ABDB1E92769800F286DC /* NetworkExtension.framework */; };
 		4DEEB5B81E97522700D0ED79 /* cell_bac.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DEEB5B71E97522700D0ED79 /* cell_bac.png */; };
 /* End PBXBuildFile section */
 
@@ -96,7 +95,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DD2ABDC1E92769800F286DC /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
