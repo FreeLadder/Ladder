@@ -1,4 +1,4 @@
-package com.example.yogaxiong.ladder;
+package com.example.yogaxiong.ladder.Utils;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -26,7 +26,7 @@ public class Regex {
     }
 
 
-    static class RegularExpression  {
+    public static class RegularExpression  {
         static final String LIST_TAG = "<div class=\"hover-bg\">(.+)</div>";
         static final String IP_TAG = "IP Address:<span id=\"(.*?)\">(.*?)</span>";
         static final String PORT_TAG = "<h4>Portï¼\u009A(\\d+?)</h4>";

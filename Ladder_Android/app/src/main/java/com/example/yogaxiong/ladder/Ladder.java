@@ -15,7 +15,7 @@ public class Ladder {
     private String encription;
     private String QRCode;
 
-    Ladder(String ip, String port, String password, String encription, String QRCode) {
+    public Ladder(String ip, String port, String password, String encription, String QRCode) {
         this.ip = ip;
         this.port = port;
         this.password = password;

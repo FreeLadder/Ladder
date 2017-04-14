@@ -1,4 +1,7 @@
-package com.example.yogaxiong.ladder;
+package com.example.yogaxiong.ladder.Utils;
+
+import com.example.yogaxiong.ladder.Config;
+import com.example.yogaxiong.ladder.Ladder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +20,6 @@ public class Creater {
     }
 
     public List<Ladder> createLadders(String source) {
-
         List<Ladder> rs = new ArrayList<>();
 
         ArrayList<String> tmps = Regex.getItemList(source);
@@ -35,7 +37,7 @@ public class Creater {
             String e = eTag.substring(7, eTag.length() - 5);
 
             String qrTag = Regex.getItem(Regex.RegularExpression.QRCODE_TAG,f);
-            String qr = Config.url + Regex.getItem(Regex.RegularExpression.QRCODE,qrTag);
+            String qr = Config.getUrl() + Regex.getItem(Regex.RegularExpression.QRCODE,qrTag);
 
             Ladder ladder = new Ladder(ip, port, pwd, e, qr);
             rs.add(ladder);

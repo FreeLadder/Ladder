@@ -1,6 +1,5 @@
-package com.example.yogaxiong.ladder;
+package com.example.yogaxiong.ladder.Utils;
 
-import android.app.Application;
 import android.content.Context;
 
 import com.android.volley.RequestQueue;
@@ -18,7 +17,7 @@ import com.android.volley.toolbox.Volley;
 public class NetWorkUtil  {
     private NetWorkUtil() {}
     private Context mContext;
-    private  static final NetWorkUtil shared = new NetWorkUtil();
+    private static final NetWorkUtil shared = new NetWorkUtil();
     public static NetWorkUtil getInstance() {
         return shared;
     }
@@ -29,10 +28,8 @@ public class NetWorkUtil  {
     }
 
     public void getResponse(Context context, String url, final CallBack callBack) {
-        if (context == null) {
+        if (context == null || mContext != context) {
             mContext = context;
-        }
-        if (requestQueue == null) {
             requestQueue = Volley.newRequestQueue(context);
         }
 
@@ -58,7 +55,7 @@ public class NetWorkUtil  {
         requestQueue.add(request);
     }
 
-    interface CallBack {
+    public interface CallBack {
         void successCallBack(String result);
         void failureCallBack(String result);
     }
