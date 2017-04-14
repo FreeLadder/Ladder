@@ -14,7 +14,7 @@ typealias DownloaderCompletionHandler = (_ data: Data?, _ image: UIImage?, _ err
 
 
 class ImageUtil: NSObject {
-    static let shared = ImageUtil()
+    static let shared = ImageUtil() //暂时
     fileprivate var data: Data = Data()
     fileprivate var expectedContentSize: Int64 = 0
     fileprivate var progressBlock: DownloaderProgressBlock?
@@ -48,7 +48,6 @@ class ImageUtil: NSObject {
     func downloadImage(url: URL, progressBlock: DownloaderProgressBlock?, completionHandler: DownloaderCompletionHandler?) {
         self.progressBlock = progressBlock
         self.completionHandler = completionHandler
-        data = Data()
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 20)
         let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
         let task = session.dataTask(with: request)
@@ -78,6 +77,7 @@ class ImageUtil: NSObject {
 extension ImageUtil: URLSessionDataDelegate {
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive response: URLResponse, completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {
         expectedContentSize = response.expectedContentLength
+        data = Data()
         completionHandler(.allow)
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }

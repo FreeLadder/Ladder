@@ -53,7 +53,7 @@ class NetworkUtil: NSObject {
         request.allowsCellularAccess = true
         let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
         let task = session.dataTask(with: request)
-        data = Data()
+        
         task.resume()
         session.finishTasksAndInvalidate()
     }
@@ -62,6 +62,7 @@ class NetworkUtil: NSObject {
 
 extension NetworkUtil: URLSessionDataDelegate {
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive response: URLResponse, completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {
+        data = Data()
         completionHandler(.allow)
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
